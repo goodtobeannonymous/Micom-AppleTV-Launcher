@@ -256,7 +256,7 @@ public class MainActivity extends Activity {
 
             p.setTextAlign(Paint.Align.RIGHT);
             text(c, time + "   " + date,
-                w - dp(42), dp(48), 15, WHITE, true);
+                w - dp(65), dp(48), 13, WHITE, true;
             p.setTextAlign(Paint.Align.LEFT);
 
             text(c, "Your screen. Your apps.",
@@ -277,7 +277,7 @@ public class MainActivity extends Activity {
                 (w - dp(100)) / cols - dp(14)
             );
 
-            cardH = dp(120);
+            cardH = dp(132);
             gapX = dp(18);
             gapY = dp(22);
             gridTop = dp(165);
@@ -354,13 +354,13 @@ public class MainActivity extends Activity {
                     boolean isHidden = hidden.contains(a.pkg);
 
                     if (a.icon != null) {
-                        int iconSize = (int)dp(48);
+                        int iconSize = (int)dp(64);
 
                         a.icon.setBounds(
                             (int)(x + (cardW - iconSize) / 2),
-                            (int)(y + dp(13)),
+                            (int)(y + dp(8)),
                             (int)(x + (cardW + iconSize) / 2),
-                            (int)(y + dp(13) + iconSize)
+                            (int)(y + dp(8) + iconSize)
                         );
 
                         a.icon.setAlpha(isHidden ? 90 : 255);
@@ -382,16 +382,17 @@ public class MainActivity extends Activity {
 
                     p.setTextAlign(Paint.Align.CENTER);
 
-                    text(c, label,
-                        x + cardW / 2,
-                        y + dp(86),
-                        12,
-                        isHidden ? 0xff8995a9 : WHITE,
-                        true
-                    );
+                    p.setTextAlign(Paint.Align.CENTER);
 
-                    p.setTextAlign(Paint.Align.LEFT);
-
+                        text(c, label,
+                            x + cardW / 2,
+                            y + dp(96),
+                            12,
+                            isHidden ? 0xff8995a9 : WHITE,
+                            true
+                        );
+                        
+                        p.setTextAlign(Paint.Align.LEFT);
                     if (editMode) {
                         p.setTextAlign(Paint.Align.CENTER);
 
